@@ -9,8 +9,9 @@
 
 #include "binaryTree.h"
 #include <stdbool.h>
-
-
+#include <iostream>
+#include <queue>
+using namespace std;
 
 void initBinaryTree(BinaryTree *tree)
 {
@@ -181,14 +182,24 @@ void breadthFirstOrder(BinaryTree *tree, BinaryTreeNode *root)
     if (root == NULL) {
         return;
     } else {
-        breadthFirstOrder(tree, root->left);
-        breadthFirstOrder(tree, root->right);
-        binary_type data = root->data;
-        printf("%i ",data);
+        queue<BinaryTreeNode *> myQueue;
+        myQueue.push(tree->root);
+        while (!myQueue.empty()) {
+            BinaryTreeNode *node = myQueue.front();
+            myQueue.pop();
+            printf("%i ",node->data);
+            
+            if (node->left) {
+                myQueue.push(node->left);
+            }
+            if (node->right) {
+                myQueue.push(node->right);
+            }
+        }
     }
 }
 
-
+/*
 //广度优先遍历 queue可以用链表实现
 void PrintBFS(Node* root) {
     queue<Node*> Q;
@@ -204,4 +215,4 @@ void PrintBFS(Node* root) {
     }
     while (!Q.empty());
 }
-
+*/

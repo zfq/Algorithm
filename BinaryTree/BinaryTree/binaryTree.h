@@ -26,6 +26,10 @@ typedef struct BinaryTree_ {
     int size;
 } BinaryTree;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 
 void initBinaryTree(BinaryTree *tree);
 bool insertLeft(BinaryTree *tree, BinaryTreeNode *node, binary_type data, BinaryTreeNode **leftNode);
@@ -42,6 +46,8 @@ void postOrder(BinaryTree *tree, BinaryTreeNode *root);
 
 //广度优先
 void breadthFirstOrder(BinaryTree *tree, BinaryTreeNode *root);
-
+#ifdef __cplusplus
+}
+#endif
 //二叉树的深度 假定一个节点深度为1
 #endif /* binaryTree_h */

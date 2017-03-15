@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B43CD751E798F3A00D74B80 /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B43CD741E798F3A00D74B80 /* libc++abi.tbd */; };
 		7B9E553E1E704B6D00E78FD5 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E553D1E704B6D00E78FD5 /* main.c */; };
-		7B9E55461E704B9400E78FD5 /* binaryTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E55441E704B9400E78FD5 /* binaryTree.c */; };
+		7B9E55461E704B9400E78FD5 /* binaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E55441E704B9400E78FD5 /* binaryTree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,9 +25,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7B43CD721E798F2900D74B80 /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
+		7B43CD741E798F3A00D74B80 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
 		7B9E553A1E704B6D00E78FD5 /* BinaryTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinaryTree; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9E553D1E704B6D00E78FD5 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		7B9E55441E704B9400E78FD5 /* binaryTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = binaryTree.c; sourceTree = "<group>"; };
+		7B9E55441E704B9400E78FD5 /* binaryTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = binaryTree.cpp; sourceTree = "<group>"; };
 		7B9E55451E704B9400E78FD5 /* binaryTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = binaryTree.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,17 +38,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B43CD751E798F3A00D74B80 /* libc++abi.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B43CD711E798F2900D74B80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B43CD741E798F3A00D74B80 /* libc++abi.tbd */,
+				7B43CD721E798F2900D74B80 /* libc.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7B9E55311E704B6B00E78FD5 = {
 			isa = PBXGroup;
 			children = (
 				7B9E553C1E704B6D00E78FD5 /* BinaryTree */,
 				7B9E553B1E704B6D00E78FD5 /* Products */,
+				7B43CD711E798F2900D74B80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9E553D1E704B6D00E78FD5 /* main.c */,
-				7B9E55441E704B9400E78FD5 /* binaryTree.c */,
+				7B9E55441E704B9400E78FD5 /* binaryTree.cpp */,
 				7B9E55451E704B9400E78FD5 /* binaryTree.h */,
 			);
 			path = BinaryTree;
@@ -124,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B9E55461E704B9400E78FD5 /* binaryTree.c in Sources */,
+				7B9E55461E704B9400E78FD5 /* binaryTree.cpp in Sources */,
 				7B9E553E1E704B6D00E78FD5 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

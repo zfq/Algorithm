@@ -29,6 +29,8 @@ int main(int argc, const char * argv[]) {
     printf("\n");
     postOrder(tree, tree->root);
     
+    printf("\n");
+    breadthFirstOrder(tree, tree->root);
     int a = 1;
     return 0;
 }
@@ -45,8 +47,8 @@ void initData(BinaryTree *tree)
     insertRight(tree, tree->root, 8, &rightNode);
     
     //5L=4 5R=6
-//    insertLeft(tree, leftNode, 4, NULL);
-//    insertRight(tree, leftNode, 6, NULL);
+    insertLeft(tree, leftNode, 4, NULL);
+    insertRight(tree, leftNode, 6, NULL);
 //
 //    //8L=3 8R=1
     insertLeft(tree, rightNode, 3, NULL);
