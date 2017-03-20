@@ -11,6 +11,8 @@
 #include <stdbool.h>
 #include <iostream>
 #include <queue>
+#include <vector>
+
 using namespace std;
 
 void initBinaryTree(BinaryTree *tree)
@@ -191,6 +193,7 @@ void breadthFirstOrder(BinaryTree *tree, BinaryTreeNode *root)
             
             if (node->left) {
                 myQueue.push(node->left);
+                
             }
             if (node->right) {
                 myQueue.push(node->right);
@@ -198,6 +201,102 @@ void breadthFirstOrder(BinaryTree *tree, BinaryTreeNode *root)
         }
     }
 }
+
+
+/**
+ 按层级变量二叉树，并在每一行尾部换行
+
+ @param tree 二叉树
+ @param root 根节点
+ */
+void breadthFirstOrderByLevel(BinaryTree *tree, BinaryTreeNode *root)
+{
+    if (root == NULL) {
+        return;
+    } else {
+        int parentSize = 1, childSize = 0;
+        queue<BinaryTreeNode *> myQueue;
+        myQueue.push(tree->root);
+        while (!myQueue.empty()) {
+            BinaryTreeNode *node = myQueue.front();
+            myQueue.pop();
+            printf("%i ",node->data);
+            
+            if (node->left) {
+                myQueue.push(node->left);
+                childSize++;
+            }
+            if (node->right) {
+                myQueue.push(node->right);
+                childSize++;
+            }
+            
+            parentSize--;
+            if (parentSize == 0) {
+                parentSize = childSize;
+                childSize = 0;
+                printf("\n");
+            }
+            
+        }
+    }
+}
+
+/**
+ 获取二叉树的高度
+
+ @param root 根节点
+ @return 二叉树的高度
+ */
+int getBinaryTreeHeight(BinaryTreeNode *root)
+{
+    if (root == NULL) {
+        return 0;
+    } else {
+        return 1+ max(getBinaryTreeHeight(root->left), getBinaryTreeHeight(root->right));
+    }
+}
+
+void breadOrderRecursively(BinaryTreeNode *root, int level, vector<vector<BinaryTreeNode *>> array)
+{
+    if (root == NULL) {
+        return;
+    }
+    vector<BinaryTreeNode *> tmpArray = array[level];
+    tmpArray.push_back(root);
+    
+    breadOrderRecursively(root->left, level+1, array);
+    breadOrderRecursively(root->right, level+1, array);
+}
+
+void breadOrder(BinaryTree *tree)
+{
+    if (tree == NULL) {
+        return;
+    } else {
+        int height = getBinaryTreeHeight(tree->root);
+        //初始化数组 数组里面存放的是数组
+        vector<vector<BinaryTreeNode *>> array(height);
+        for (int i = 0; i < height; i++) {
+            vector<BinaryTreeNode *> tmpArray;
+            array[i] = tmpArray;
+        }
+        
+        //递归变量
+        breadOrderRecursively(tree->root, 0,array);
+        
+        //打印数组
+        for (int i = 0 ; i < array.size(); i++) {
+            vector<BinaryTreeNode *> tmpArray = array[i];
+            for (int j = 0; j < tmpArray.size(); j++) {
+                printf("%i ",tmpArray[j]->data);
+            }
+            printf("\n");
+        }
+        
+    }
+}
+
 
 /*
 //广度优先遍历 queue可以用链表实现

@@ -21,17 +21,21 @@ int main(int argc, const char * argv[]) {
     initBinaryTree(tree);
     initData(tree);
     
-    preOrder(tree, tree->root);
+//    preOrder(tree, tree->root);
+//    
+//    printf("\n");
+//    inOrder(tree, tree->root);
+//    
+//    printf("\n");
+//    postOrder(tree, tree->root);
+//    
+//    printf("\n");
+//    breadthFirstOrder(tree, tree->root);
     
     printf("\n");
-    inOrder(tree, tree->root);
-    
-    printf("\n");
-    postOrder(tree, tree->root);
-    
-    printf("\n");
-    breadthFirstOrder(tree, tree->root);
-    int a = 1;
+    breadOrder(tree);
+//    breadthFirstOrderByLevel(tree, tree->root);
+//    int c = getBinaryTreeHeight(tree->root);
     return 0;
 }
 

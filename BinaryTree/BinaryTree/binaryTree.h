@@ -44,8 +44,17 @@ void inOrder(BinaryTree *tree, BinaryTreeNode *root);
 //后序遍历
 void postOrder(BinaryTree *tree, BinaryTreeNode *root);
 
-//广度优先
+//层级遍历
 void breadthFirstOrder(BinaryTree *tree, BinaryTreeNode *root);
+
+//层级遍历 且每层尾部要换行
+void breadthFirstOrderByLevel(BinaryTree *tree, BinaryTreeNode *root);
+    
+void breadOrder(BinaryTree *tree);
+
+//获取二叉树深度
+int getBinaryTreeHeight(BinaryTreeNode *root);
+    
 #ifdef __cplusplus
 }
 #endif
