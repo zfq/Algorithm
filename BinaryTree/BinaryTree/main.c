@@ -39,6 +39,7 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
+
 void initData(BinaryTree *tree)
 {
     //创建根节点2

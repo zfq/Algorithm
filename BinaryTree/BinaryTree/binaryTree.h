@@ -49,7 +49,8 @@ void breadthFirstOrder(BinaryTree *tree, BinaryTreeNode *root);
 
 //层级遍历 且每层尾部要换行
 void breadthFirstOrderByLevel(BinaryTree *tree, BinaryTreeNode *root);
-    
+
+//层级遍历（递归形式的)
 void breadOrder(BinaryTree *tree);
 
 //获取二叉树深度
