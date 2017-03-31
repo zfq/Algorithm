@@ -3,12 +3,13 @@
 //  算法
 //
 //  Created by _ on 16/10/17.
-//  Copyright © 2016年 Wecash. All rights reserved.
+//  Copyright © 2016年 zfq. All rights reserved.
 //
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "charContain.h"
 
 int strToInt(char *);
 void decimalToBinay(int num);
@@ -45,9 +46,14 @@ int main(int argc, const char * argv[]) {
         printf("%i ",a[i]);
     }*/
     
-    int a[] = {3,3,5};
-    size_t size = sizeof(a)/sizeof(a[0]);
-    binarySearch(a, size, 3);
+//    int a[] = {3,3,5};
+//    size_t size = sizeof(a)/sizeof(a[0]);
+//    binarySearch(a, size, 3);
+    
+//    bool isContain = charContain2("ABCCCD", "A");
+//    char c = firstRepeatedChar("ABC!!CCDD");
+    bool result = isSubsequence("ABCCCD", "BD");
+    size_t t1= sizeof(int);
     return 0;
 }
 
