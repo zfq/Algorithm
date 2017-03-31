@@ -257,13 +257,16 @@ int getBinaryTreeHeight(BinaryTreeNode *root)
     }
 }
 
-void breadOrderRecursively(BinaryTreeNode *root, int level, vector<vector<BinaryTreeNode *>> array)
+void breadOrderRecursively(BinaryTreeNode *root, int level, vector<vector<BinaryTreeNode *>> *array)
 {
     if (root == NULL) {
         return;
     }
-    vector<BinaryTreeNode *> tmpArray = array[level];
-    tmpArray.push_back(root);
+    
+    //注意：如下必须用引用的形式，不能写成： vector<xxx> tmpArray = array->at(level) 赋值时会进行拷贝，相当于
+    //赋值后的tmpArray并不是原来的array了
+    vector<BinaryTreeNode *> *tmpArray = &(array->at(level));
+    tmpArray->push_back(root);
     
     breadOrderRecursively(root->left, level+1, array);
     breadOrderRecursively(root->right, level+1, array);
@@ -279,12 +282,12 @@ void breadOrder(BinaryTree *tree)
         
         vector<vector<BinaryTreeNode *>> array(height);
         for (int i = 0; i < height; i++) {
-            vector<BinaryTreeNode *> tmpArray;
-            array[i] = tmpArray;
+            vector<BinaryTreeNode *> tmpArray(0);
+            array.push_back(tmpArray);
         }
         
         //递归变量
-        breadOrderRecursively(tree->root, 0,array);
+        breadOrderRecursively(tree->root, 0,&array);
         
         //打印数组
         for (int i = 0 ; i < array.size(); i++) {
@@ -298,6 +301,7 @@ void breadOrder(BinaryTree *tree)
         
         
     }
+    
 }
 
 
