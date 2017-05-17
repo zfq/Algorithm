@@ -127,3 +127,30 @@ bool numIsExistInArray(int findNum, int *array, int arraySize)
     return result;
 }
 
+//翻转字符串
+bool reverseString(char *a, int from, int to)
+{
+    size_t len = strlen(a);
+    if (from < 0 || from > len -1) {
+        return false;
+    }
+    if (to < 0 || to > len-1) {
+        return false;
+    }
+    
+    if (from > to) {
+        return false;
+    }
+    
+    while (from < to) {
+        char tmp = a[from];
+        a[from] = a[to];
+        a[to] = tmp;
+        from++;
+        to--;
+    }
+    return true;
+}
+
+
+
