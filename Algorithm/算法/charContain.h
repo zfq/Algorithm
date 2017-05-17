@@ -58,4 +58,5 @@ bool isSubsequence(char *a, char *b);
  */
 bool numIsExistInArray(int findNum, int *array, int arraySize);
 
+bool reverseString(char *a, int from, int to);
 #endif /* charContain_h */
