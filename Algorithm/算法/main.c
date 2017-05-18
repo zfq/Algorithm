@@ -10,6 +10,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "charContain.h"
+#include "SequenceReduction.h"
 
 int strToInt(char *);
 void decimalToBinay(int num);
@@ -21,39 +22,70 @@ void quickSort(int *array,int left,int right);
 void quickSort2(int data[],int length,int start,int end);
 int binarySearch(int A[],int len, int num);
 
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    
-//    char *str = "1234";
-//    int c = strToInt(str);
-//    printf("%i\n",c);
-    
-//    decimalToBinay(12); // 1100
-
-//    char *str = "Hello  ";
-//    convertStr(str);
-
-    
-//    int a[] = {3,2,1,4,3,5,9,8,7,6}; //,4,3,5,9,8,7,6
-//    bubbleSort(a,10);
-//    selectSort(a, 10);
-//    insertSort(a, 10);
-//    quickSort2(a, 10,0, 9);
     
     /*
+    char *str = "1234";
+    int c = strToInt(str);
+    printf("%i\n",c);
+     */
+    
+    /*
+    decimalToBinay(12); // 1100
+     */
+    
+    /*
+    char *str = "Hello  ";
+    convertStr(str);
+     */
+    
+    /*
+    int a[] = {3,2,1,4,3,5,9,8,7,6}; //,4,3,5,9,8,7,6
+    bubbleSort(a,10);
+    selectSort(a, 10);
+    insertSort(a, 10);
+    quickSort2(a, 10,0, 9);
+    
     //打印
     for (int i = 0; i < 10; i++) {
         printf("%i ",a[i]);
-    }*/
+    }
+     */
     
-//    int a[] = {3,3,5};
-//    size_t size = sizeof(a)/sizeof(a[0]);
-//    binarySearch(a, size, 3);
+    /*
+    int a[] = {3,3,5};
+    size_t size = sizeof(a)/sizeof(a[0]);
+    binarySearch(a, size, 3);
+     */
     
-//    bool isContain = charContain2("ABCCCD", "A");
-//    char c = firstRepeatedChar("ABC!!CCDD");
+    /*
+    bool isContain = charContain2("ABCCCD", "A");
+    char c = firstRepeatedChar("ABC!!CCDD");
     bool result = isSubsequence("ABCCCD", "BD");
     size_t t1= sizeof(int);
+    */
+    
+    /*
+    char *b = "ABCDE"; b[1] = '4'; //这种b存放在常量区，不可修改，b是个指针
+     */
+    
+    /*
+    char b[] = "ABCDE";
+    reverseString(b, 0, 3);
+    printf("%s\n",b);
+     */
+    
+    /*
+    int a[5] = {4, 0, 1, 2 ,0};
+    bool result = isMatch(a, 5, 3);
+    char *info = result == true ? "符号条件":"不符合条件";
+    printf("%s\n",info);
+    swap1(a, (a+1));
+    */
+    
+    int a[4] = {4, 1 ,2, 1};
+    permutation(a, 0, 3);
     return 0;
 }
 
