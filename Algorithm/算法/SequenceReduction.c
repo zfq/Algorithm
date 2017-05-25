@@ -54,8 +54,8 @@ bool sr_should_swap(int *array, int left, int right)
  (aa交换) => abcd a不动 bcd重复 =>得到所有以a开头的全排列
         (bb交换) => bcd b不动 cd重复动作 left=1
                 (cc交换) => cd left=2
-                        c不动 d从复动作 left=3
-                        结束，此时left == right (当left == right时 就可以打印数据了)
+                        c不动 此时就剩d了， left=3 right = 3, left == right 结束
+                         left == right (当left == right时 就可以打印数据了)
                 (cd交换) => dc
         (bc交换) => cbd
                 ...
@@ -84,13 +84,39 @@ void permutation(int *originArray, int left, int right)
         for ( i = left; i <= right; i++) {
             if (sr_should_swap(originArray, left, i)) {
                 sr_swap(&(originArray[i]), &(originArray[left]));
+                //从第left+1的下标开始全排列
                 permutation(originArray, left+1, right);
                 sr_swap(&(originArray[i]), &(originArray[left]));
             }
         }
     }
 }
- 
+
+/**
+ 全排列
+
+ @param originArray 数组
+ @param left 起始下标
+ @param right 终止下标
+ */
+void permutation2(int *originArray, int left, int right)
+{
+    for (int i = left; i <= right; i++) {
+        
+        sr_swap(&originArray[i],&originArray[left]);
+        //判断数组中剩余的待全排列的元素是否大于1,如果大于1，就继续排列 否则就直接打印当前排列好的数据
+        if (left+1 < right) {
+            permutation2(originArray, left+1, right);
+        } else {
+            //打印这一组结果
+            for (int j = 0; j <= right; j++) {
+                printf("%d ",originArray[j]);
+            }
+            printf("\n");
+        }
+        sr_swap(&originArray[i],&originArray[left]);
+    }
+}
 
 /*
 void swap2(int *a, int *b)

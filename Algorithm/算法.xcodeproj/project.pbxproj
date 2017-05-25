@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F120CE91ECC2D2C0037A10E /* SequenceReduction.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F120CE81ECC2D2C0037A10E /* SequenceReduction.c */; };
+		1F120D551ECDB0FA0037A10E /* dynamicArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F120D531ECDB0FA0037A10E /* dynamicArray.c */; };
 		1F4845B41DB5253400E00E79 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F4845B31DB5253400E00E79 /* main.c */; };
 		1F7CE6E91E8B8C1E00C7D211 /* charContain.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F7CE6E71E8B8C1E00C7D211 /* charContain.c */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		1F120CE71ECC2D2C0037A10E /* SequenceReduction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequenceReduction.h; sourceTree = "<group>"; };
 		1F120CE81ECC2D2C0037A10E /* SequenceReduction.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SequenceReduction.c; sourceTree = "<group>"; };
+		1F120D531ECDB0FA0037A10E /* dynamicArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dynamicArray.c; sourceTree = "<group>"; };
+		1F120D541ECDB0FA0037A10E /* dynamicArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dynamicArray.h; sourceTree = "<group>"; };
 		1F4845B01DB5253400E00E79 /* 算法 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "算法"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4845B31DB5253400E00E79 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		1F7CE6E71E8B8C1E00C7D211 /* charContain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = charContain.c; sourceTree = "<group>"; };
@@ -66,6 +69,8 @@
 				1F120CE71ECC2D2C0037A10E /* SequenceReduction.h */,
 				1F120CE81ECC2D2C0037A10E /* SequenceReduction.c */,
 				1F4845B31DB5253400E00E79 /* main.c */,
+				1F120D531ECDB0FA0037A10E /* dynamicArray.c */,
+				1F120D541ECDB0FA0037A10E /* dynamicArray.h */,
 				1F7CE6E81E8B8C1E00C7D211 /* charContain.h */,
 				1F7CE6E71E8B8C1E00C7D211 /* charContain.c */,
 			);
@@ -132,6 +137,7 @@
 				1F120CE91ECC2D2C0037A10E /* SequenceReduction.c in Sources */,
 				1F4845B41DB5253400E00E79 /* main.c in Sources */,
 				1F7CE6E91E8B8C1E00C7D211 /* charContain.c in Sources */,
+				1F120D551ECDB0FA0037A10E /* dynamicArray.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

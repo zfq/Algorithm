@@ -152,5 +152,44 @@ bool reverseString(char *a, int from, int to)
     return true;
 }
 
+/*
+f(n-1), min(0, n-1)
+if ( a[n] - min(0, n-1) < f(n-1) ) {
+    f(n) = f (n-1);
+} else {
+    f(n) = a[n] - min(0, n-1);
+}
+*/
+//获取数组的最大差值
+void maxDiffInArray(int array[], int length)
+{
+    if (array == NULL) return;
+    
+    //设置默认最大差值 和 最小值
+    int maxDiff = 0;
+    int minEle = array[0];
+    
+    //设置最大差值的两个值的下标
+    int left = 0, right = 0;
+    for (int i = 0; i <= length-1; i++) {
+        int result = array[i] - minEle;
+        if (result <= maxDiff) {
+            maxDiff = maxDiff;
+        } else {
+            maxDiff = result;
+            right = i;
+        }
+        
+        if (result < 0) {
+            minEle = array[i];
+            //如果数组的最后一个数最小，就忽略它，不然left值不正确
+            if (i != length-1) {
+                left = i;
+            }
+        }
+    }
+    
+    printf("最大差值为:array[%d] - array[%d] = %d\n",right,left,maxDiff);
+}
 
 

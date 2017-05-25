@@ -84,8 +84,22 @@ int main(int argc, const char * argv[]) {
     swap1(a, (a+1));
     */
     
-    int a[4] = {4, 1 ,2, 1};
-    permutation(a, 0, 3);
+    /*
+    int a[] = {1, 2 ,3,4};
+    permutation2(a, 0, 2);
+     */
+    
+    /*
+    char *str = "jsdfsdf sdfsdf";
+    size_t hash = 1+*str;
+    while (*str) {
+        hash = *str++;
+    }
+    */
+    
+    int a[] = {-4,4};
+//    int a[] = {1,1};
+    maxDiffInArray(a, 2);
     return 0;
 }
 

@@ -14,5 +14,6 @@
 
 //bool isMatch(int *array, int len, int pairs);
 void permutation(int *originArray, int left, int right);
+void permutation2(int *originArray, int n, int length);
 
 #endif /* SequenceReduction_h */

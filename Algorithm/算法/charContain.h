@@ -59,4 +59,12 @@ bool isSubsequence(char *a, char *b);
 bool numIsExistInArray(int findNum, int *array, int arraySize);
 
 bool reverseString(char *a, int from, int to);
+
+/**
+ 获取数组中的最大差值
+
+ @param array 原数组
+ @param length 数组长度
+ */
+void maxDiffInArray(int array[], int length);
 #endif /* charContain_h */
