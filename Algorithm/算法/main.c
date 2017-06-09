@@ -97,9 +97,14 @@ int main(int argc, const char * argv[]) {
     }
     */
     
+    /*
     int a[] = {-4,4};
 //    int a[] = {1,1};
     maxDiffInArray(a, 2);
+     */
+    
+    int a[] = {-5,-3,-1,-2,-1};
+    maxSumOfSubarray(a, 5);
     return 0;
 }
 

@@ -192,4 +192,42 @@ void maxDiffInArray(int array[], int length)
     printf("最大差值为:array[%d] - array[%d] = %d\n",right,left,maxDiff);
 }
 
+/*
+ f(n) = 
+ { array[n]  (n=0 || f(n-1)<=0)
+ { f(n-1) + array[n] (n > 0 && f(n-1)>0)
+ */
+int maxSumOfSubarray(int array[], int length)
+{
+    if (array == NULL || length == 0) {
+        return 0;
+    }
+    int max = array[0];
+    int currSum = array[0];
+    int begin = 0;
+    int end = 0;
+    
+    for (int i = 0; i < length; i++) {
+
+        if (currSum <= 0) {
+            currSum = array[i];
+            if (max < currSum) {
+                max = currSum;
+                begin = i;
+                end = i;
+            }
+        } else {
+            currSum += array[i];
+            if (max < currSum) {
+                max = currSum;
+                end = i;
+            }
+        }
+        
+        
+    }
+    
+    printf("最大值为:%d,位置为从%d到%d\n",max,begin,end);
+    return max;
+}
 

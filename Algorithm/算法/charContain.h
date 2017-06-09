@@ -67,4 +67,14 @@ bool reverseString(char *a, int from, int to);
  @param length 数组长度
  */
 void maxDiffInArray(int array[], int length);
+
+/**
+ 连续子数组的最大和
+
+ @param array 数组
+ @param length 数组长度
+ @return 连续子数组的最大和
+ */
+int maxSumOfSubarray(int array[], int length);
+
 #endif /* charContain_h */
