@@ -33,15 +33,21 @@ int main(int argc, const char * argv[]) {
 //    breadthFirstOrder(tree, tree->root);
     
     printf("\n");
-    breadOrder(tree);
+//    breadOrder(tree);
 //    breadthFirstOrderByLevel(tree, tree->root);
 //    int c = getBinaryTreeHeight(tree->root);
+    zhiOrderPrint(tree);
     return 0;
 }
 
 
 void initData(BinaryTree *tree)
 {
+    /*
+          2
+        5     8
+     4    6  3  1
+     */
     //创建根节点2
     insertLeft(tree, NULL, 2,NULL);
     

@@ -12,6 +12,8 @@
 #include <iostream>
 #include <queue>
 #include <vector>
+#include <stack>
+#include <deque>
 
 using namespace std;
 
@@ -319,3 +321,61 @@ void PrintBFS(Node* root) {
     while (!Q.empty());
 }
 */
+
+void zhiOrderPrint(BinaryTree *tree)
+{
+    std::stack<BinaryTreeNode *> stack1;  //奇数层 先right 后left
+    std::stack<BinaryTreeNode *> stack2;  //偶数层 先left 后right
+    
+    //先从第一层奇数层开始
+    BinaryTreeNode *node = tree->root;
+    int layer = 1;
+    stack1.push(node);
+    
+    while ( stack1.size() > 0 || stack2.size() > 0) {
+        if (layer % 2 == 0) {
+            //当前节点为偶数层
+            if (!stack2.empty()) {
+                int a = stack2.size();
+                BinaryTreeNode *tmpNode = stack2.top();
+                stack2.pop();
+                int b = stack2.size();
+                if (stack2.empty()) {
+                    layer ++;
+                }
+                printf("%d ", tmpNode->data);
+                //则子节点为奇数层
+                if (tmpNode->right) {
+                    stack1.push(tmpNode->right);
+                }
+                if (tmpNode->left) {
+                    stack1.push(tmpNode->left);
+                }
+                
+            }
+            
+        } else {
+            //当前节点为奇数层
+            if (!stack1.empty()) {
+                int a = stack1.size();
+                BinaryTreeNode *tmpNode = stack1.top();
+                stack1.pop();
+                int b = stack1.size();
+                printf("%d ", tmpNode->data);
+                if (stack1.empty()) {
+                    layer ++;
+                }
+                
+                //则子节点为偶数层
+                if (tmpNode->left) {
+                    stack2.push(tmpNode->left);
+                }
+                if (tmpNode->right) {
+                    stack2.push(tmpNode->right);
+                }
+            } 
+        }
+    }
+    
+    printf("\n");
+}

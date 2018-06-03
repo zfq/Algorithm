@@ -55,6 +55,9 @@ void breadOrder(BinaryTree *tree);
 
 //获取二叉树深度
 int getBinaryTreeHeight(BinaryTreeNode *root);
+
+    //之字形遍历二叉树
+void zhiOrderPrint(BinaryTree *tree);
     
 #ifdef __cplusplus
 }
