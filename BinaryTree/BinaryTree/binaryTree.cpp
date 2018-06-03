@@ -281,6 +281,7 @@ void breadOrder(BinaryTree *tree)
     } else {
         int height = getBinaryTreeHeight(tree->root);
         //初始化数组 数组里面存放的是数组
+        
         vector<vector<BinaryTreeNode *>> array(height);
         for (int i = 0; i < height; i++) {
             vector<BinaryTreeNode *> tmpArray(0);
@@ -298,6 +299,8 @@ void breadOrder(BinaryTree *tree)
             }
             printf("\n");
         }
+        
+        
         
     }
     
